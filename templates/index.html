@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>DarkForum</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="subforum">
+        <div class="subforum-title">
+            <h1>General Information</h1>
+        </div>
+        <div class="subforum-row">
+            <div class="subforum-description subforum-column">
+                <h1><a href="">Description Title:</a></h1>
+                <p>CONTENT POST</p>
+            </div>
+            <div class="subforum-stats subforum-column center">
+                <span>24 posts | 15 Topics</span>
+            </div>
+            <div class="subforum-info subforum-column">
+                <b><a href="">Last Post</a></b> by <a href="">Meagher</a>
+                <br>
+                on <small> 22 Dec 2021</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
