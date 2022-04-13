@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="mb-3">Create a Post</h1>
+    <hr class="mt-2 mb-3"/>
+
+    <form action="/post" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title of Post</label>
+            <input type="text" id="title" name="title" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="post_text" class="form-label">Text for Post</label>
+            <textarea type="text" id="post_text" name="post_text" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+</div>
+
+{% endblock %}
