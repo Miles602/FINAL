@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container"> 
+
+    <h1 class="mb-5"> Search for the title of post </h1>
+    <form action="/post/search" method="get" class="mb-5">
+    <p class="mb-3">Enter the title of your post in the field below</p>
+
+    <div class="mb-3">
+        <label for="forumsearch" class="form-label">Post Title:</label>
+        <input type="text" id="forumsearch" name="forumsearch" class="form-control" autocomplete="off" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">search</button>
+
+    </form>
+
+{% if search_query !='' %}
+{% if posts|length !=0 %}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Post Title</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {%for post in posts%}
+        <tr>
+            <td><a href="/post/{{Posts.post_id}}"><{{post.title }}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No post found found</p>
+{% endif %}
+{% endif %}
+
+{% endblock %}
+
+
+</div>

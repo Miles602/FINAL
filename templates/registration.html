@@ -1,34 +1,26 @@
 {% extends 'layout.html' %}
 
-
-
 {% block body %}
 <div class="container">
-<h1 class="mb-5">Registration</h1>
+    <h1 class="mb-3">Registration</h1>
+    <hr class="mt-2 mb-3"/>
+    <p class="mb-3">Fill the information below to start your account:</p>
+    
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" id="username" name="username" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="passcode" class="form-label">Password</label>
+            <input type="password" id="passcode" name="passcode" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
 
-<p class="mb-3">Fill the information below to start your account:</p>
-
-<form action="/register" method="post">
-
-<div class="mb-3">
-    <label for="username" class="form-label">User Name</label>
-    <input type="username" id="username" name="username" class="form-control" >
-</div>
-
-<div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" id="password" name="password" class="form-control" >
-</div>
-
-<button type="submit" class="btn btn-primary">Login</button>
-
-</form>
-
-<!-- Good job with this! -->
 {% if error %}
         <p class="error"><strong>Error:</strong> {{ error }}
-{% endif %}
+    {% endif %}
+</div>
 
 {% endblock %}
-
-</div>
