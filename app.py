@@ -32,7 +32,7 @@ def register_form():
 def register():
     error=None
     user_name=request.form.get('username','')
-    password=request.form.get("password",'')
+    password=request.form.get("password",'') # Try to stick to either double or single quotes for consistency
     if user_name == '' or password=='':
             error="You have not filled in your information"
     else:
