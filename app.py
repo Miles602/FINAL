@@ -62,12 +62,11 @@ def register_form():
 
 @app.post('/register')
 def register():
-    error = None
-    username = request.form.get('username', '')
-    passcode = request.form.get('passcode', '')
-
-    if username == '' or passcode == '':
-        error = 'You have not filled in your information'
+    error=None
+    user_name=request.form.get('username','')
+    password=request.form.get("password",'') # Try to stick to either double or single quotes for consistency
+    if user_name == '' or password=='':
+            error="You have not filled in your information"
     else:
         created_user = user_repository_singleton.create_user(username, passcode)
         return redirect('/')

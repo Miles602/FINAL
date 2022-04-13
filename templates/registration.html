@@ -1,7 +1,6 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-
 <div class="container">
     <h1 class="mb-3">Registration</h1>
     <hr class="mt-2 mb-3"/>
@@ -19,7 +18,7 @@
         <button type="submit" class="btn btn-primary">Register</button>
     </form>
 
-    {% if error %}
+{% if error %}
         <p class="error"><strong>Error:</strong> {{ error }}
     {% endif %}
 </div>
